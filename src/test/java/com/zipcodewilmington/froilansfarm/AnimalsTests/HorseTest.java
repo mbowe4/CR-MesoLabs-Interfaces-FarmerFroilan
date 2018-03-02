@@ -1,7 +1,7 @@
 package com.zipcodewilmington.froilansfarm.AnimalsTests;
 
 import com.zipcodewilmington.froilansfarm.Animals.Horse;
-import com.zipcodewilmington.froilansfarm.Crop.EarCorn;
+import com.zipcodewilmington.froilansfarm.Crops.EarCorn;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -22,19 +22,8 @@ public class HorseTest {
         Horse horse = new Horse();
         EarCorn earCorn = new EarCorn();
 
-        String expected = "Horse ate a EarCorn.";
-        String actual = horse.eat(earCorn);
+        horse.eat(earCorn);
 
-        Assert.assertEquals(expected, actual);
-    }
-
-    @Test
-    public void getHasEatenTest() {
-        Horse horse = new Horse();
-
-        Boolean expected = false;
-        Boolean actual = horse.getHasEaten();
-
-        Assert.assertEquals(expected, actual);
+        Assert.assertTrue(horse.hasEaten());
     }
 }

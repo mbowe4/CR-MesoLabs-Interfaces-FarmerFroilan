@@ -1,7 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Interfaces;
 
-import com.zipcodewilmington.froilansfarm.Crop.Crop;
-import com.zipcodewilmington.froilansfarm.Crop.CropRow;
+import com.zipcodewilmington.froilansfarm.Crops.Crop;
 
 public interface Botanist {
 

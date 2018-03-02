@@ -1,4 +1,4 @@
-package com.zipcodewilmington.froilansfarm.Crop;
+package com.zipcodewilmington.froilansfarm.Crops;
 
 import com.zipcodewilmington.froilansfarm.Interfaces.Producer;
 
@@ -7,21 +7,19 @@ public abstract class Crop implements Producer {
     private boolean hasBeenHarvested;
 
     public Crop() {
-        this.hasBeenFertilized = false;
-        this.hasBeenHarvested = false;
+        this.setHasBeenHarvested(false);
+        this.setHasBeenFertilized(false);
     }
 
-    public abstract Object yield();
-
-    public boolean isHasBeenFertilized() {
+    public boolean getHasBeenFertilized() {
         return hasBeenFertilized;
     }
 
-    public void setHasBeenFertilized(boolean hasBeenFertilized) {
-        this.hasBeenFertilized = hasBeenFertilized;
+    public void setHasBeenFertilized(boolean status) {
+        this.hasBeenFertilized = status;
     }
 
-    public boolean isHasBeenHarvested() {
+    public boolean getHasBeenHarvested() {
         return hasBeenHarvested;
     }
 
@@ -31,6 +29,6 @@ public abstract class Crop implements Producer {
 
     @Override
     public String toString() {
-        return Crop.class.getSimpleName();
+        return this.getClass().getSimpleName();
     }
 }

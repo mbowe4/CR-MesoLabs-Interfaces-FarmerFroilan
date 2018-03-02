@@ -9,6 +9,6 @@ public class ChickenCoop {
     private List<Chicken> chickens;
 
     public ChickenCoop() {
-        this.chickens = new ArrayList<Chicken>();
+        this.chickens = new ArrayList<>();
     }
 }

@@ -1,8 +1,8 @@
-package com.zipcodewilmington.froilansfarm.Animals;
+package com.zipcodewilmington.froilansfarm.Crops;
 
 import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
 
-public class Egg implements Edible{
+public class Grape implements Edible{
 
     @Override
     public boolean equals(Object obj) {

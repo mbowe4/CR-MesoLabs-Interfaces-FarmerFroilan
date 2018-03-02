@@ -25,8 +25,8 @@ public class Farm {
         return chickenCoops;
     }
 
-    public String getFarmHouse() {
-        return "";
+    public FarmHouse getFarmHouse() {
+        return farmHouse;
     }
 
     public String getField() {

@@ -1,7 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Farm;
 
-import com.zipcodewilmington.froilansfarm.Crop.Crop;
-import com.zipcodewilmington.froilansfarm.Crop.CropRow;
+import com.zipcodewilmington.froilansfarm.Crops.CropRow;
 
 import java.util.ArrayList;
 import java.util.List;

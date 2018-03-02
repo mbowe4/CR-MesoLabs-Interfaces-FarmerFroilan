@@ -1,7 +1,6 @@
 package com.zipcodewilmington.froilansfarm.People;
 
-import com.zipcodewilmington.froilansfarm.Crop.Crop;
-import com.zipcodewilmington.froilansfarm.Crop.CropRow;
+import com.zipcodewilmington.froilansfarm.Crops.Crop;
 import com.zipcodewilmington.froilansfarm.Farm.Farm;
 import com.zipcodewilmington.froilansfarm.Interfaces.Botanist;
 import com.zipcodewilmington.froilansfarm.Interfaces.Eater;
@@ -27,7 +26,7 @@ public class Farmer extends Person implements Rider, Botanist, Eater {
     }
 
     public String eat(Object edible) {
-        this.setHasEaten(true);
+
         return (this.getName() + " ate a " + edible.getClass().getSimpleName() + ".");
     }
 
