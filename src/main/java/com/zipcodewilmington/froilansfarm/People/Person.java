@@ -1,20 +1,21 @@
 package com.zipcodewilmington.froilansfarm.People;
 
-import com.zipcodewilmington.froilansfarm.Interfaces.Eater;
-import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
-import com.zipcodewilmington.froilansfarm.Interfaces.NoiseMaker;
-import com.zipcodewilmington.froilansfarm.Interfaces.Rider;
+import com.zipcodewilmington.froilansfarm.Interfaces.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Person implements Eater, NoiseMaker, Rider {
     private String name;
-    private List<Edible> ediblesEaten;
+    private final List<Edible> ediblesEaten;
+    private final List<Rideable> rideablesRidden;
+    private boolean isRiding;
 
     public Person(String name) {
         this.setName(name);
-        ediblesEaten = new ArrayList<>();
+        this.ediblesEaten = new ArrayList<>();
+        this.rideablesRidden = new ArrayList<>();
+        this.setRidingStatus(false);
     }
 
     public String getName() {
@@ -26,31 +27,38 @@ public class Person implements Eater, NoiseMaker, Rider {
     }
 
     public void eat(Edible edible) {
-        ediblesEaten.add(edible);
+        this.ediblesEaten.add(edible);
     }
 
     public List<Edible> getEdiblesEaten() {
-        return ediblesEaten;
-    }
-
-    public boolean hasEaten() {
-        return !ediblesEaten.isEmpty();
+        return this.ediblesEaten;
     }
 
     public String makeNoise() {
         return "Howdy!";
     }
 
-    public String mount(Object rideable) {
-        return null;
+    public void mount(Rideable rideable) {
+        if(this.getRidingStatus()) {
+            this.ride(rideable);
+        }
     }
 
     public void dismount() {
-
+        this.setRidingStatus(false);
     }
 
-    public String ride(Object rideable) {
-        return null;
+    public void ride(Rideable rideable) {
+        this.setRidingStatus(true);
+        this.rideablesRidden.add(rideable);
+    }
+
+    private void setRidingStatus(Boolean status) {
+        this.isRiding = status;
+    }
+
+    public Boolean getRidingStatus() {
+        return isRiding;
     }
 
     @Override

@@ -4,22 +4,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CropRow {
-    private List<Crop> cropRow;
+    private final List<Crop> cropRow;
 
     public CropRow() {
         this.cropRow = new ArrayList<>();
     }
 
-    public void addCropToCropRow(Crop cropToAdd) {
+    public void add(Crop cropToAdd) {
         cropRow.add(cropToAdd);
     }
 
-    public String getCropRow() {
+    public String showCropRow() {
         StringBuilder builder = new StringBuilder();
         for(Crop crop: cropRow) {
             builder.append(crop + "\n");
         }
         return builder.toString();
+    }
+
+    public List<Crop> getCropRow() {
+        return cropRow;
     }
 }
 

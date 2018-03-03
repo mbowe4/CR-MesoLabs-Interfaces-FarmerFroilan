@@ -12,13 +12,26 @@ import java.util.List;
 public class KalePlantTest {
 
     @Test
-    public void yieldTest() {
+    public void yieldWhileFertilizedTest() {
         KalePlant kalePlant = new KalePlant();
+        kalePlant.setHasBeenFertilized(true);
         kalePlant.yield();
 
         List<Kale> expected = new ArrayList<>();
         expected.add(new Kale());
 
+        List<Kale> actual = kalePlant.getKales();
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void yieldWhileUnfertilizedTest() {
+        KalePlant kalePlant = new KalePlant();
+        kalePlant.setHasBeenFertilized(false);
+        kalePlant.yield();
+
+        List<Kale> expected = new ArrayList<>();
         List<Kale> actual = kalePlant.getKales();
 
         Assert.assertEquals(expected, actual);

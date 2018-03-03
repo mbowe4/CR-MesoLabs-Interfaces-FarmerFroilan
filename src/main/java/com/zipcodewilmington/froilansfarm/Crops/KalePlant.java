@@ -8,10 +8,17 @@ public class KalePlant extends Crop {
 
 
     public void yield() {
-        kales.add(new Kale());
+        if(getHasBeenFertilized()) {
+            kales.add(new Kale());
+        }
     }
 
     public List<Kale> getKales() {
         return kales;
+    }
+
+    @Override
+    public boolean hasBeenHarvested() {
+        return this.kales.isEmpty();
     }
 }

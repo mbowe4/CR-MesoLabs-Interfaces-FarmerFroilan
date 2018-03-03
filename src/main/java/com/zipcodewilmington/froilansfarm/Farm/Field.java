@@ -10,18 +10,22 @@ public class Field {
     private List<CropRow> cropRows;
 
     public Field() {
-        cropRows = new ArrayList<CropRow>();
+        cropRows = new ArrayList<>();
     }
 
-    public String getCropRows() {
+    public String showField() {
         StringBuilder crops = new StringBuilder();
         for(CropRow cropRow: cropRows) {
-            crops.append(cropRow);
+            crops.append(cropRow.showCropRow());
         }
         return crops.toString();
     }
 
-    public void addCropRow(CropRow cropRow) {
+    public List<CropRow> getCropRowsList() {
+        return this.cropRows;
+    }
+
+    public void add(CropRow cropRow) {
         cropRows.add(cropRow);
     }
 }

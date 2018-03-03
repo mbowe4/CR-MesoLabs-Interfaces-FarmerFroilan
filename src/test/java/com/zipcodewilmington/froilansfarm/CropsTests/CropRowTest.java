@@ -15,11 +15,11 @@ public class CropRowTest {
         KalePlant kalePlant1 = new KalePlant();
         KalePlant kalePlant2 = new KalePlant();
 
-        cropRow1.addCropToCropRow(kalePlant1);
-        cropRow1.addCropToCropRow(kalePlant2);
+        cropRow1.add(kalePlant1);
+        cropRow1.add(kalePlant2);
 
         String expected = "KalePlant\nKalePlant\n";
-        String actual = cropRow1.getCropRow();
+        String actual = cropRow1.showCropRow();
 
         Assert.assertEquals(expected, actual);
     }
@@ -28,10 +28,21 @@ public class CropRowTest {
     public void addCropToCropRowTest() {
         CropRow cropRow = new CropRow();
         TomatoPlant tomatoPlant = new TomatoPlant();
-        cropRow.addCropToCropRow(tomatoPlant);
+        cropRow.add(tomatoPlant);
+
+        int expected = 1;
+        int actual = cropRow.getCropRow().size();
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void showCropRowTest() {
+        CropRow cropRow = new CropRow();
+        cropRow.add(new TomatoPlant());
 
         String expected = "TomatoPlant\n";
-        String actual = cropRow.getCropRow();
+        String actual = cropRow.showCropRow();
 
         Assert.assertEquals(expected, actual);
     }

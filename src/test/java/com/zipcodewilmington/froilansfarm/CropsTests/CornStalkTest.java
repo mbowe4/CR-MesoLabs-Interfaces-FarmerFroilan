@@ -11,12 +11,26 @@ import java.util.List;
 public class CornStalkTest {
 
     @Test
-    public void yieldTest() {
+    public void yieldWhileFertilizedTest() {
         CornStalk cornStalk = new CornStalk();
+        cornStalk.setHasBeenFertilized(true);
         cornStalk.yield();
 
         List<EarCorn> expected = new ArrayList<>();
         expected.add(new EarCorn());
+
+        List<EarCorn> actual = cornStalk.getEarCorns();
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void yieldWhileUnfertilizedTest() {
+        CornStalk cornStalk = new CornStalk();
+        cornStalk.setHasBeenFertilized(false);
+        cornStalk.yield();
+
+        List<EarCorn> expected = new ArrayList<>();
 
         List<EarCorn> actual = cornStalk.getEarCorns();
 

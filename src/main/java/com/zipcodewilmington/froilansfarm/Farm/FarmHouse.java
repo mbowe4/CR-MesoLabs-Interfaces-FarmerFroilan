@@ -6,18 +6,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FarmHouse {
-    private List<Person> people;
+    private final List<Person> people;
 
 
     public FarmHouse() {
-        this.people = new ArrayList<Person>();
+        this.people = new ArrayList<>();
     }
 
-    public String getPeople() {
+    public void addPersonToFarmHouse(Person personToAdd) {
+        people.add(personToAdd);
+    }
+
+    public String showPeople() {
         StringBuilder builder = new StringBuilder();
         for(Person person: people) {
-            builder.append(person);
+            builder.append(person + "\n");
         }
         return builder.toString();
+    }
+
+    public List<Person> getPeople() {
+        return people;
     }
 }

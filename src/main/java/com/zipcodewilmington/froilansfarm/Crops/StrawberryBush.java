@@ -7,10 +7,17 @@ public class StrawberryBush extends Crop {
     private List<Strawberry> strawberries = new ArrayList<Strawberry>();
 
     public void yield() {
-        strawberries.add(new Strawberry());
+        if(this.getHasBeenFertilized()) {
+            strawberries.add(new Strawberry());
+        }
     }
 
     public List<Strawberry> getStrawberries() {
         return strawberries;
+    }
+
+    @Override
+    public boolean hasBeenHarvested() {
+        return this.strawberries.isEmpty();
     }
 }

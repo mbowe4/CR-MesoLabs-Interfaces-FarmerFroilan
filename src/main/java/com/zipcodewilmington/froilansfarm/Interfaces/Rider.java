@@ -2,9 +2,9 @@ package com.zipcodewilmington.froilansfarm.Interfaces;
 
 public interface Rider {
 
-    String mount(Object rideable);
+    void mount(Rideable rideable);
 
     void dismount();
 
-    String ride(Object rideable);
+    void ride(Rideable rideable);
 }

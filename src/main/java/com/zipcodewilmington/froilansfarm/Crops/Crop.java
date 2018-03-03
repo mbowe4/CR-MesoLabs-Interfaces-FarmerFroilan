@@ -2,7 +2,7 @@ package com.zipcodewilmington.froilansfarm.Crops;
 
 import com.zipcodewilmington.froilansfarm.Interfaces.Producer;
 
-public abstract class Crop implements Producer {
+public abstract class  Crop implements Producer {
     private boolean hasBeenFertilized;
     private boolean hasBeenHarvested;
 
@@ -26,6 +26,8 @@ public abstract class Crop implements Producer {
     public void setHasBeenHarvested(boolean hasBeenHarvested) {
         this.hasBeenHarvested = hasBeenHarvested;
     }
+
+    public abstract boolean hasBeenHarvested();
 
     @Override
     public String toString() {

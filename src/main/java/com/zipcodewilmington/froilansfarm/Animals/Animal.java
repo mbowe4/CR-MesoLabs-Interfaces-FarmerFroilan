@@ -21,4 +21,9 @@ public abstract class Animal implements NoiseMaker, Eater {
     public boolean hasEaten() {
         return !ediblesEaten.isEmpty();
     }
+
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName();
+    }
 }

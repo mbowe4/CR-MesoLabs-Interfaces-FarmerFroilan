@@ -7,10 +7,17 @@ public class GrapeVine extends Crop {
     private List<Grape> grapes = new ArrayList<Grape>();
 
     public void yield() {
-        grapes.add(new Grape());
+        if(this.getHasBeenFertilized()) {
+            grapes.add(new Grape());
+        }
     }
 
     public List<Grape> getGrapes() {
         return grapes;
+    }
+
+    @Override
+    public boolean hasBeenHarvested() {
+        return this.grapes.isEmpty();
     }
 }

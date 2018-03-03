@@ -8,10 +8,17 @@ public class TomatoPlant extends Crop {
 
 
     public void yield() {
-        tomatoes.add(new Tomato());
+        if(this.getHasBeenFertilized()) {
+            tomatoes.add(new Tomato());
+        }
     }
 
     public List<Tomato> getTomatoes() {
         return tomatoes;
+    }
+
+    @Override
+    public boolean hasBeenHarvested() {
+        return this.tomatoes.isEmpty();
     }
 }

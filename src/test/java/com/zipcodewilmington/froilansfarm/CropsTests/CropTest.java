@@ -17,13 +17,13 @@ public class CropTest {
         Assert.assertEquals(expected, actual);
     }
 
-    @Test
-    public void getHasBeenHarvestedTest() {
-        KalePlant kalePlant = new KalePlant();
-
-        boolean expected = false;
-        boolean actual = kalePlant.getHasBeenHarvested();
-
-        Assert.assertEquals(expected, actual);
-    }
+//    @Test
+//    public void getHasBeenHarvestedTest() {
+//        KalePlant kalePlant = new KalePlant();
+//
+//        boolean expected = false;
+//        boolean actual = kalePlant.getHasBeenHarvested();
+//
+//        Assert.assertEquals(expected, actual);
+//    }
 }

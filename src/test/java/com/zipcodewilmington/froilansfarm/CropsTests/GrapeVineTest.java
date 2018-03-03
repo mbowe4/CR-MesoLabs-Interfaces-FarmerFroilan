@@ -11,13 +11,26 @@ import java.util.List;
 public class GrapeVineTest {
 
     @Test
-    public void yieldTest() {
+    public void yieldWhileFertilizedTest() {
         GrapeVine grapeVine = new GrapeVine();
+        grapeVine.setHasBeenFertilized(true);
         grapeVine.yield();
 
         List<Grape> expected = new ArrayList<>();
         expected.add(new Grape());
 
+        List<Grape> actual = grapeVine.getGrapes();
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void yieldWhileUnfertilizedTest() {
+        GrapeVine grapeVine = new GrapeVine();
+        grapeVine.setHasBeenFertilized(false);
+        grapeVine.yield();
+
+        List<Grape> expected = new ArrayList<>();
         List<Grape> actual = grapeVine.getGrapes();
 
         Assert.assertEquals(expected, actual);
